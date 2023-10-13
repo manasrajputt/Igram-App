@@ -1,0 +1,143 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#logofont{
+  font-family: Croissant One;
+  letter-spacing: -1px;
+  color: #0866FF;
+}
+
+#logindiv{
+  border: 1px solid #DBDBDB;
+  width: 25rem;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+}
+
+#logindiv input{
+  background-color: #FAFAFA;
+  font-size: 13px;
+}
+
+
+.image{
+  width: 7rem;
+  height: 7rem;
+  /* border: 2px solid rgba(17, 171, 15, 0.899); */
+  background: linear-gradient(to bottom left ,rgb(217, 77, 135),rgb(218, 80, 80),orange,rgb(255, 255, 58));
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 2px;
+  margin-left: 10px;
+}
+
+.image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+#parentcircle{
+  position: relative;
+}
+
+#parentcircle .pencil{
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+}
+
+.pencil i{
+  opacity: .5;
+  font-size: 14px;
+}
+
+#parentcircle:hover .pencil{
+  opacity: 1;
+}
+
+#uploadimg{
+  display: none;
+}
+
+
+
+.flex{
+  /* background-color: red; */
+  display: flex;
+  gap: 20px;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+.post textarea{
+  resize: none;
+  height: 100px !important;
+}
+.post label{
+  font-size: 15px;
+  opacity: .6;
+}
+
+#commentfield{
+  outline: none;
+  border: 1px solid rgba(128, 128, 128, 0.477);
+  padding: 5px 8px;
+  font-size: 13px;
+  width: 100%;
+}
+
+#commentfield:focus{
+  box-shadow:  0 0 0 0.25rem rgba(13,110,253,.25)
+
+}
+
+.showcomment{
+  cursor: pointer;
+}
+
+#window{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+}
+
+#window i{
+  font-size: 25px;
+  position: absolute;
+  right: 2%;
+  color: black;
+  cursor: pointer;
+}
+
+#window h5{
+  text-align: center;
+}

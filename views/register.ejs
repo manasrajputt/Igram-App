@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Epilogue:wght@700;800&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400&family=Nunito:wght@200;300;400;600;700&family=Pacifico&family=Playfair+Display&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center">
+  <div id="logindiv" class="container px-4 py-3 m-2">
+    <h2 id="logofont" class="my-4" style="text-align: center;">Igram</h2>
+    <hr>
+    <form action="/register" method="post">
+      <div class="mb-3">
+        <h4 class="mb-3" style="text-align: center;">REGISTER</h4>
+        <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+        <input autocomplete="off" type="email" placeholder=" Enter Email" name="email" class="form-control rounded-0"
+          id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputPassword1" class="form-label">Username</label> -->
+        <input autocomplete="off" type="text" placeholder="Enter Username" name="username"
+          class="form-control rounded-0" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+        <input type="password" placeholder="Enter Password" name="password" class="form-control rounded-0"
+          id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputPassword1" class="form-label">Profession</label> -->
+        <input autocomplete="off" type="text" placeholder="Enter Profession" name="profession"
+          class="form-control rounded-0" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputPassword1" class="form-label">Age</label> -->
+        <input autocomplete="off" type="text" placeholder="Enter Age" name="age" class="form-control rounded-0"
+          id="exampleInputPassword1">
+      </div>
+      <div class="d-grid gap-2 mb-2">
+        <button class="btn btn-outline-primary rounded-0" type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+  <div id="logindiv" class="container d-flex align-items-center justify-content-center px-4 py-3 mt-2"
+    style="font-size: 14px;">
+    Already have an account&nbsp; <a style="text-decoration: none; font-size: 14px; font-weight: 500;" href="/login">
+      Login</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<% include ./partials/header.ejs%>
+    <div class="container py-3">
+        <h4 class="mb-4">Feed</h4>
+        <p style="margin-top: -20px;">All Post Around You</p>
+        <hr>
+        <div class="container mt-3">
+            <% allpost.reverse().forEach(function(post){ %>
+                <div class="card mx-auto mb-3 row rounded-0" style="width:25rem">
+                    <div class="card-body col-12">
+                        <div style="display: flex; align-items: center; justify-content: flex-start;">
+                            <img src="../images/uploads/<%= post.userid.image %>"
+                                style="height:1.6rem; width: 1.6rem; border-radius: 50%;" alt="">
+                            <h5 class="card-title mt-2 mx-1" style="font-size: 16px;">
+                                <%= post.userid.username %>
+                            </h5>
+
+                        </div>
+                        <img src="../images/uploads/<%= post.postimage %>" class="card-img-top mb-1 rounded-0"
+                            style="height:200px; object-fit: cover; object-position: top;" alt="">
+                        <p class="card-text">
+                            <%= post.data %>
+                        </p>
+                        <p class="card-text" style="font-size: 10px; margin-top: -15px; color: grey;">
+                            <%= post.date %>
+                        </p>
+                        <div class="mb-1  d-flex align-items-center">
+                            <a href="/like/<%= post._id %>"
+                                class="btn me-2 mb-1 <%= post.likes.indexOf(user.id) === -1 ? 'btn-primary' : 'btn-danger' %>">
+                                <%= post.likes.indexOf(user.id)===-1 ? "Like" : "Unlike" %>
+                            </a>
+                            <p class="text-primary mb-0" style="font-weight: 600;font-size: 14px;">
+                                <%= post.likes.length %> Likes
+                            </p>
+                            <p class="showcomment text-primary mb-0 mx-3" style="font-weight: 600;font-size: 14px;">
+                                <%= post.comments.length %> Comments
+                            </p>
+                        </div>
+                        <form class="mb-2 d-flex" id="commentform" action="/comment/<%= post._id %>" method="post">
+                            <input id="commentfield" autocomplete="off" type="text" name="comment" class="rounded-2"
+                                placeholder="write comment..">
+                            <input type="submit" class="btn btn-outline-danger ms-2" value="comment">
+                        </form>
+                        <div class="comments mt-2">
+                            <% post.comments.reverse().forEach(function(com){ %>
+                                <div class="d-flex align-items-center ">
+                                    <img class="my-1 me-2" src="../images/uploads/<%=com.userid.image%>"
+                                        style="height:1.4rem; width: 1.4rem; border-radius: 50%;" alt="">
+                                    <h5 style="font-size: 14px;">
+                                        <%=com.userid.username%>&nbsp;
+                                            <%= com.text %>
+                                    </h5>
+                                </div>
+                                <% })%>
+                        </div>
+
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+    <script>
+    </script>
+
+    <% include ./partials/footer.ejs%>

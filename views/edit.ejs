@@ -1,0 +1,51 @@
+<% include ./partials/header.ejs %>
+    <div class="container my-3">
+        <form action="/updateinfo" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input disabled type="email" placeholder="Email" name="email" value="<%= data.email %>"
+                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputUsername1" class="form-label">Username</label>
+                <input id="username" type="text" placeholder="Enter username" name="username"
+                    value="<%= data.username %>" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputUsername1" class="form-label">Profession</label>
+                <input type="text" placeholder="Enter profession" name="profession" value="<%= data.profession%>"
+                    class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputAge1" class="form-label">Age</label>
+                <input type="text" placeholder="Enter age" name="age" value="<%= data.age %>" class="form-control"
+                    id="exampleInputPassword1">
+            </div>
+            <input id="submit" type="submit" class="btn btn-primary" value="Update Account">
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+        integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var username = document.querySelector("#username");
+        username.addEventListener("input", function () {
+            var val = username.value;
+            if (val.length > 0) {
+                axios.get(`/check/${val}`)
+                    .then(function (user) {
+                        // console.log(user.data)
+                        if (user.data) {
+                            username.style.boxShadow = "0 0 0 0.25rem rgb(244 141 149)";
+                            document.querySelector("#submit").setAttribute("disabled",false);
+                        }
+                        else {
+                            username.style.boxShadow = "0 0 0 0.25rem rgba(13,110,253,.25)";
+                            document.querySelector("#submit").removeAttribute("disabled");
+                        }
+                    })
+            }
+        })
+    </script>
+    <% include ./partials/footer.ejs %>
