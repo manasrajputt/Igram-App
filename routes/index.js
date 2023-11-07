@@ -67,7 +67,9 @@ router.post('/forgot', async function (req, res, next) {
   else {
     // user ke liye ek key banao
     crypto.randomBytes(80, async function (err, buff) {
+      // console.log(buff);
       let key = buff.toString("hex");
+      // console.log(key);
       user.key = key;
       await user.save();
       await nodemailer(req.body.email, user._id, key)

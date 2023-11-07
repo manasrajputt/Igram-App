@@ -5,7 +5,7 @@
         <hr>
         <div class="container mt-3">
             <% allpost.reverse().forEach(function(post){ %>
-                <div class="card mx-auto mb-3 row rounded-0" style="width:25rem">
+                <div class="card mx-auto mb-3 row rounded-0" style="width:22rem">
                     <div class="card-body col-12">
                         <div style="display: flex; align-items: center; justify-content: flex-start;">
                             <img src="../images/uploads/<%= post.userid.image %>"
@@ -13,7 +13,6 @@
                             <h5 class="card-title mt-2 mx-1" style="font-size: 16px;">
                                 <%= post.userid.username %>
                             </h5>
-
                         </div>
                         <img src="../images/uploads/<%= post.postimage %>" class="card-img-top mb-1 rounded-0"
                             style="height:200px; object-fit: cover; object-position: top;" alt="">
@@ -45,7 +44,7 @@
                                 <div class="d-flex align-items-center ">
                                     <img class="my-1 me-2" src="../images/uploads/<%=com.userid.image%>"
                                         style="height:1.4rem; width: 1.4rem; border-radius: 50%;" alt="">
-                                    <h5 style="font-size: 14px;">
+                                    <h5 class="mt-2" style="font-size: 14px;">
                                         <%=com.userid.username%>&nbsp;
                                             <%= com.text %>
                                     </h5>
