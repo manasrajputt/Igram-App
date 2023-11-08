@@ -14,6 +14,7 @@
     "express-session": "^1.17.3",
     "googleapis": "^126.0.1",
     "http-errors": "~1.6.3",
+    "mongodb": "^6.2.0",
     "mongoose": "^7.4.2",
     "mongoose-deep-populate": "^3.2.0",
     "morgan": "~1.9.1",
