@@ -1,14 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const UserModel = require('./users');
-const PostModel = require('./posts');
-const CommentModel = require('./comments');
+const UserModel = require('../models/users.js')
+const PostModel = require('../models/posts.js');
+const CommentModel = require('../models/comments.js');
 const passport = require('passport');
 const multer = require("multer");
 const path = require('path');
 const fs = require('fs');
 const nodemailer = require('../nodemailer');
 const crypto = require("crypto");
+const mongoose=require('mongoose');
+require('dotenv').config();
+
+mongoose.connect(process.env.mongodb_url).then(() => {
+  console.log("db connected");
+}).catch(err => {
+  console.log(err);
+})
 
 const localStrategy = require('passport-local')
 passport.use(new localStrategy(UserModel.authenticate()));
